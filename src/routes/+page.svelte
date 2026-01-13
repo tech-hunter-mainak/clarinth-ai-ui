@@ -23,18 +23,18 @@
 	];
 </script>
 
-<div class="flex min-h-screen w-full flex-col justify-center bg-[#f3f7f5]">
-	<div
-		class="relative z-10 flex w-full flex-col items-center overflow-hidden"
-	>
+<div class="flex min-h-screen mt-20 w-full flex-col justify-center bg-[#f3f7f5]">
+	<div class="relative z-10 flex w-full flex-col items-center overflow-hidden">
 		<!-- Hero Section -->
 		<section class="relative flex min-w-screen! flex-col items-center bg-white">
 			<!-- HERO IMAGE -->
-			<div class="relative h-90 overflow-hidden rounded-[50px] md:w-[calc(100%-60px)]">
+			<div class="relative min-h-90 md:h-90 overflow-hidden md:rounded-[50px] md:w-[calc(100%-60px)]">
 				<img src={banner} alt="ai companion" class="h-full w-full object-cover" />
 
 				<!-- DARK OVERLAY -->
-				<div class="absolute inset-0 flex items-center bg-linear-90 from-black/90 to-transparent px-10">
+				<div
+					class="absolute inset-0 flex items-center bg-linear-90 from-black/90 to-transparent px-10"
+				>
 					<div class="max-w-md">
 						<h1 class="mb-3 text-3xl font-semibold text-white">
 							Find Clarity Through Connection and Intelligence
@@ -48,7 +48,7 @@
 								Learn More
 							</button>
 
-							<button class="rounded-lg bg-button px-6 py-3 font-medium text-white shadow-md">
+							<button class="bg-button rounded-lg px-6 py-3 font-medium text-white shadow-md">
 								Try Now (Free)
 							</button>
 						</div>
@@ -57,7 +57,7 @@
 			</div>
 
 			<!-- THREE INFORMATION BOXES UNDER HERO -->
-			<div class="relative z-20 -mt-12 grid grid-cols-1 gap-6 px-8 md:grid-cols-3 lg:px-20">
+			<div class="relative z-20 md:-mt-12 my-10 grid grid-cols-1 gap-6 px-8 md:grid-cols-3 lg:px-20">
 				<div class="rounded-lg border bg-white p-6 text-center shadow-md">
 					<h3 class="text-lg font-semibold">Intellectual Conversations</h3>
 				</div>
@@ -270,7 +270,5 @@
 				<Button text="Contact Your Doctor" icon={icon_left_arrow}></Button>
 			</div>
 		</section>
-
-		
 	</div>
 </div>

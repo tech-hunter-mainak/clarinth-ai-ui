@@ -5,7 +5,7 @@
 </script>
 
 <footer
-	class="bg-primary mt-10 mb-2 w-full relative md:left-5! rounded-[50px] pt-10 pb-6 text-(--heading-color) md:w-[calc(100%-40px)]"
+	class="bg-primary relative mt-10 mb-2 w-full pt-10 pb-6 text-(--heading-color) md:left-5! md:w-[calc(100%-40px)] md:rounded-[50px]"
 >
 	<div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-3">
 		<!-- Left block -->

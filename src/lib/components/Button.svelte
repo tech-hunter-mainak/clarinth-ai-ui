@@ -7,7 +7,7 @@
 	export let icon: string = '';
 	export let iconDir: 'left' | 'right' = 'right';
 	export let target: '_blank' | '' = '';
-    export let type: 'primary' | 'secondary' = 'primary';
+	export let type: 'primary' | 'secondary' = 'primary';
 
 	function handleClick() {
 		if (!link) return;
@@ -25,7 +25,7 @@
 <button
 	on:click={handleClick}
 	class="
-		{(type) ? 'bg-button-gradient' : 'stroke-neutral-400'} 
+		{type ? 'bg-button-gradient' : 'stroke-neutral-400'} 
 		inline-flex
 		w-max
 		cursor-pointer

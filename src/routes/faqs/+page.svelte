@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
-	import { slide, fade } from 'svelte/transition';
+	import { slide } from 'svelte/transition';
 
 	interface FAQ {
 		question: string;
@@ -50,7 +50,7 @@
 </script>
 
 <div class="flex min-h-screen w-full flex-col bg-[#f3f7f5]">
-	<div class="mx-auto flex flex-col w-full py-20">
+	<div class="mx-auto flex w-full flex-col py-20">
 		<!-- Page Title -->
 		<div class="mb-14 text-center">
 			<h1 class="text-4xl font-bold text-gray-900">Frequently Asked Questions</h1>
@@ -60,10 +60,10 @@
 		</div>
 
 		<!-- FAQs -->
-		<div class="space-y-4 mx-40">
+		<div class="mx-40 space-y-4">
 			{#each faqs as faq, i}
 				<div
-					class="overflow-hidden rounded-xl  bg-white shadow-sm transition hover:-gray-300 hover:shadow-lg"
+					class="hover:-gray-300 overflow-hidden rounded-xl bg-white shadow-sm transition hover:shadow-lg"
 				>
 					<!-- Header -->
 					<button
@@ -92,7 +92,7 @@
 
 		<!-- CTA -->
 		<section
-			class="relative mt-20 px-20 flex w-full flex-col items-start justify-between overflow-hidden rounded-xl  bg-gradient-to-br from-[#F4F7FB] to-white py-16 md:flex-row md:items-center"
+			class="relative mt-20 flex w-full flex-col items-start justify-between overflow-hidden rounded-xl bg-gradient-to-br from-[#F4F7FB] to-white px-20 py-16 md:flex-row md:items-center"
 		>
 			<!-- Background Lines -->
 			<div class="pointer-events-none absolute inset-0 opacity-15">

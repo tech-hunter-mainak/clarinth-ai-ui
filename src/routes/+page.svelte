@@ -1,4 +1,8 @@
 <script lang="ts">
+	import banner from '$lib/assets/home_banner.jpg';
+	import robot from '$lib/assets/robot_img.jpg';
+	import Button from '$lib/components/Button.svelte';
+	import icon_left_arrow from '$lib/assets/leftArrow.svg';
 	const performance = [
 		{ label: 'New Leads', value: 75.2 },
 		{ label: 'Qualified', value: 56.7 },
@@ -7,10 +11,9 @@
 	];
 
 	const features = [
-		'Personalized Engagement',
-		'Smart Data Analytics',
-		'Seamless Integration',
-		'24/7 Customer Support'
+		"Engage in deep, meaningful dialogues that stimulate your mind and provide fresh perspectives on life's challenges.",
+		'A judgment-free space where you can express yourself freely and receive empathetic, thoughtful responses.',
+		'24/7 access to your AI companion, ready to listen and guide you whenever you need support'
 	];
 
 	const stats = [
@@ -22,33 +25,31 @@
 
 <div class="flex min-h-screen w-full flex-col justify-center bg-[#f3f7f5]">
 	<div
-		class="relative z-10 flex w-full flex-col items-center overflow-hidden rounded-2xl bg-white shadow-xl"
+		class="relative z-10 flex w-full flex-col items-center overflow-hidden"
 	>
 		<!-- Hero Section -->
 		<section class="relative flex min-w-screen! flex-col items-center bg-white">
 			<!-- HERO IMAGE -->
 			<div class="relative h-90 overflow-hidden rounded-[50px] md:w-[calc(100%-60px)]">
-				<img
-					src="/hero-image.jpg"
-					alt="Woman waiting at airport"
-					class="h-full w-full object-cover"
-				/>
+				<img src={banner} alt="ai companion" class="h-full w-full object-cover" />
 
 				<!-- DARK OVERLAY -->
-				<div class="absolute inset-0 flex items-center bg-black/40 px-10">
+				<div class="absolute inset-0 flex items-center bg-linear-90 from-black/90 to-transparent px-10">
 					<div class="max-w-md">
-						<h1 class="mb-3 text-3xl font-semibold text-white">Private Covid Travel Tests</h1>
+						<h1 class="mb-3 text-3xl font-semibold text-white">
+							Find Clarity Through Connection and Intelligence
+						</h1>
 						<p class="mb-6 text-gray-200">
-							We’re an award winning provider of COVID-19 tests, with a 24/7 customer service team.
+							Your AI companion for mental wellness and intellectual conversations that heal
 						</p>
 
 						<div class="flex space-x-4">
 							<button class="rounded-lg bg-white px-6 py-3 font-medium text-black shadow-md">
-								Day 2 Test
+								Learn More
 							</button>
 
-							<button class="rounded-lg bg-[#6F6CFF] px-6 py-3 font-medium text-white shadow-md">
-								Antigen Fit to Fly Test
+							<button class="rounded-lg bg-button px-6 py-3 font-medium text-white shadow-md">
+								Try Now (Free)
 							</button>
 						</div>
 					</div>
@@ -58,30 +59,36 @@
 			<!-- THREE INFORMATION BOXES UNDER HERO -->
 			<div class="relative z-20 -mt-12 grid grid-cols-1 gap-6 px-8 md:grid-cols-3 lg:px-20">
 				<div class="rounded-lg border bg-white p-6 text-center shadow-md">
-					<h3 class="text-lg font-semibold">24/7 Customer Service</h3>
+					<h3 class="text-lg font-semibold">Intellectual Conversations</h3>
 				</div>
 
 				<div class="rounded-lg border bg-white p-6 text-center shadow-md">
-					<h3 class="text-lg font-semibold">6,000+ 5 star Reviews</h3>
+					<h3 class="text-lg font-semibold">Compassionate Support</h3>
 				</div>
 
 				<div class="rounded-lg border bg-white p-6 text-center shadow-md">
-					<h3 class="text-lg font-semibold">Government Registered</h3>
+					<h3 class="text-lg font-semibold">Always Available</h3>
 				</div>
 			</div>
 		</section>
 
-		<div class="w-full bg-white px-6 py-14 md:px-12 lg:px-20">
-			<div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-20">
+		<div class="w-full bg-white px-6 md:px-12 lg:px-20">
+			<div
+				class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-20 md:pt-24"
+			>
 				<!-- LEFT side -->
-				<div class="relative flex w-full justify-center">
+				<div class="relative flex justify-center">
 					<!-- Laptop Image -->
-					<div class="w-full max-w-lg overflow-hidden rounded-xl shadow-md">
-						<img src="/your-image.jpg" alt="Laptop user" class="h-full w-full object-cover" />
+					<div class="overflow-hidden rounded-xl shadow-md">
+						<img
+							src={robot}
+							alt="Laptop user"
+							class="object-cover object-center lg:h-125 lg:w-96"
+						/>
 					</div>
 
 					<!-- Floating Card -->
-					<div
+					<!-- <div
 						class="absolute -top-6 left-6 w-64 rounded-lg border border-gray-100 bg-white px-5 py-4 shadow-xl"
 					>
 						<h3 class="mb-4 text-sm font-semibold">Sales Performance Overview</h3>
@@ -92,45 +99,53 @@
 										<span>{item.label}</span>
 										<span>{item.value}%</span>
 									</div>
-									<div class="h-[6px] w-full rounded-full bg-gray-200">
+									<div class="h-1.5 w-full rounded-full bg-gray-200">
 										<div
-											class="h-[6px] rounded-full bg-green-600 transition-all"
+											class="h-1.5 rounded-full bg-green-600 transition-all"
 											style="width: {item.value}%;"
 										></div>
 									</div>
 								</div>
 							{/each}
 						</div>
-					</div>
+					</div> -->
 				</div>
 
 				<!-- RIGHT side -->
 				<div class="w-full space-y-6">
 					<h2 class="text-3xl leading-snug font-bold lg:text-4xl">
 						Customer-Driven Solutions<br />
-						with Xentrix
+						with Clarinth AI
 					</h2>
 
 					<p class="max-w-md text-[15px] leading-relaxed text-gray-600">
-						At Xentrix, we focus on delivering tailored solutions that meet your customers' needs.
-						With advanced technology and AI-powered CRM systems, we help businesses build stronger
-						customer relationships.
+						At Clarinth AI, we believe that mental wellness comes through understanding —
+						understanding ourselves, our thoughts, and the world around us. Our AI companion doesn't
+						just chat; it engages in the kind of intellectual conversations that help you untangle
+						complex emotions and discover new insights.
+						<br /><br />
+
+						Like navigating a labyrinth to reach the center of clarity, our conversations guide you
+						through the complexity of your thoughts to find peace, understanding, and healing.
+						Whether you're a student facing academic pressure, a professional managing workplace
+						stress, or simply someone seeking a deeper connection with their inner self, Clarinth AI
+						is here for you.
 					</p>
 
 					<!-- Feature grid (2 columns) -->
-					<div class="grid grid-cols-1 gap-x-10 gap-y-4 sm:grid-cols-2">
+					<!-- <div class="grid grid-cols-1 gap-x-10 gap-y-4 text-balance">
 						{#each features as f}
 							<div class="flex items-center space-x-2">
-								<div class="h-4 w-4 rounded-full bg-green-600"></div>
+								<div class="min-h-4! min-w-4! rounded-full bg-green-600"></div>
 								<span class="text-[15px] text-gray-800">{f}</span>
 							</div>
 						{/each}
-					</div>
+					</div> -->
 
 					<!-- Stats -->
 					<div class="flex flex-wrap gap-10 pt-4">
 						{#each stats as s}
-							<div class="min-w-[100px]">
+							<div class="min-w-25">
 								<p class="text-3xl font-bold">{s.value}</p>
 								<p class="text-sm text-gray-600">{s.label}</p>
 							</div>
@@ -148,8 +163,8 @@
 				</h1>
 
 				<p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-600 md:text-lg">
-					With Xentrix, you get a powerful automation platform designed to optimize your workflow
-					and scale your business effortlessly.
+					We're building more than a chatbot — we're creating a companion for your mental wellness
+					journey.
 				</p>
 
 				<div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -217,7 +232,7 @@
 		</section>
 
 		<section
-			class="relative flex w-[calc(100%-40px)] flex-col items-start justify-between overflow-hidden rounded-xl bg-[#F4F7FB] px-8 py-16 md:flex-row md:items-center md:px-20"
+			class="relative mb-10 flex w-[calc(100%-40px)] flex-col items-start justify-between overflow-hidden rounded-xl bg-[#F4F7FB] px-8 py-16 md:flex-row md:items-center md:px-20"
 		>
 			<!-- Background subtle abstract contour lines -->
 			<div class="pointer-events-none absolute inset-0 opacity-20">
@@ -245,7 +260,6 @@
 			<!-- Text Block -->
 			<div class="relative z-10 max-w-xl">
 				<p class="mb-3 text-xs tracking-widest text-[#4A5A78]">CHANGE YOUR LIFE</p>
-
 				<h1 class="text-4xl leading-tight font-semibold text-[#0B163F] md:text-5xl">
 					<span class="font-bold">It’s Time</span> To Change Your Life Today
 				</h1>
@@ -253,37 +267,10 @@
 
 			<!-- Button -->
 			<div class="relative z-10 mt-8 md:mt-0">
-				<button
-					class="flex items-center gap-2 rounded-full bg-[#0A66FF] px-8 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-blue-700"
-				>
-					Contact Your Doctor
-					<svg
-						width="16"
-						height="16"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-						class="inline-block"
-					>
-						<path
-							d="M4 8h8M10 4l4 4-4 4"
-							stroke="white"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						/>
-					</svg>
-				</button>
+				<Button text="Contact Your Doctor" icon={icon_left_arrow}></Button>
 			</div>
 		</section>
 
-		<!-- Footer Section -->
-		<footer class="border-t bg-white py-14">
-			<div class="mb-6 text-center text-lg font-semibold">Approved and Trusted Provider</div>
-
-			<div class="flex justify-center space-x-20">
-				<img src="/dept-health.svg" class="h-12" alt="Department of Health & Social Care" />
-				<img src="/govuk.svg" class="h-12" alt="GOV.UK Logo" />
-			</div>
-		</footer>
+		
 	</div>
 </div>

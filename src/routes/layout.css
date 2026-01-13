@@ -1,3 +1,27 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+@layer base {
+    :root {
+        --base-color: #8cbab5;
+        --heading-color: #0c2b2e;
+        --button-color: #008236;
+    }
+}
+
+/* Components */
+
+@layer components {
+    .bg-primary {
+        @apply bg-(--base-color);
+    }
+
+    .bg-button {
+        @apply bg-(--button-color);
+    }
+
+    .bg-button-gradient {
+        @apply bg-linear-60 from-(--heading-color) to-(--button-color);
+    }
+}

@@ -1,83 +1,109 @@
-<script>
+<script lang="ts">
 	import Button from './Button.svelte';
-	import icon_mail from '$lib/assets/mail.svg';
-	import icon_plus from '$lib/assets/plus.svg';
+	import { MessageSquareHeart } from 'lucide-svelte';
+
+	type NavGroup = {
+		title: string;
+		items: { label: string; href: string }[];
+	};
+
+	const navGroups: NavGroup[] = [
+		{
+			title: 'Product',
+			items: [
+				{ label: 'AI Companion', href: '#' },
+				{ label: 'Conversations', href: '#' },
+				{ label: 'Emotional Support', href: '#' },
+				{ label: 'Self-Growth Tools', href: '#' }
+			]
+		},
+		{
+			title: 'About Clarinth',
+			items: [
+				{ label: 'About Us', href: '#' },
+				{ label: 'Vision & Mission', href: '#' },
+				{ label: 'Careers', href: '#' },
+				{ label: 'Contact', href: '#' },
+				{ label: 'Help / FAQs', href: '#' }
+			]
+		},
+		{
+			title: 'Use Cases',
+			items: [
+				{ label: 'Students', href: '#' },
+				{ label: 'Professionals', href: '#' },
+				{ label: 'Personal Growth', href: '#' }
+			]
+		},
+		{
+			title: 'For Partners',
+			items: [
+				{ label: 'Integrations', href: '#' },
+				{ label: 'API Access', href: '#' },
+				{ label: 'Workshops & Programs', href: '#' },
+				{ label: 'Institutional Use', href: '#' }
+			]
+		}
+	];
 </script>
 
-<footer
-	class="bg-primary relative mt-10 mb-2 w-full pt-10 pb-6 text-(--heading-color) md:left-5! md:w-[calc(100%-40px)] md:rounded-[50px]"
->
-	<div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-3">
-		<!-- Left block -->
-		<div class="space-y-4">
-			<p class="leading-tight font-semibold">
-				Clarinth AI<br />
-				Mental Wellness Companion
-			</p>
-			<p class="text-sm leading-relaxed">
-				Intelligent and compassionate conversations<br />
-				designed to support clarity and emotional wellbeing.
-			</p>
-
-			<Button text="aiclarinth@gmail.com" link="mailto:aiclarinth@gmail.com" icon={icon_mail}
-			></Button>
-		</div>
-
-		<!-- Middle block -->
-		<div class="space-y-4">
-			<p class="font-semibold">Explore</p>
-			<p class="text-sm leading-relaxed">
-				Features<br />
-				About Clarinth<br />
-				Contact & Support<br />
-				Start Your Journey
-			</p>
-
-			<Button text="Ask a Question" link="/faqs" icon={icon_plus}></Button>
-		</div>
-
-		<!-- Right block (social networks) -->
-		<div class="flex justify-center md:justify-end">
-			<div class="flex flex-col items-center rounded-xl bg-white px-8 py-6 text-center shadow">
-				<p class="mb-4 font-semibold">Connect with Us</p>
-
-				<!-- Social icons row -->
-				<div class="mb-4 flex space-x-4">
-					<a href="#" class="flex h-8 w-8 items-center justify-center rounded-full bg-[#0c2b2e]">
-						<i class="fab fa-facebook-f text-white"></i>
-					</a>
-					<a href="#" class="flex h-8 w-8 items-center justify-center rounded-full bg-[#0c2b2e]">
-						<i class="fab fa-linkedin-in text-white"></i>
-					</a>
-					<a href="#" class="flex h-8 w-8 items-center justify-center rounded-full bg-[#0c2b2e]">
-						<i class="fab fa-youtube text-white"></i>
-					</a>
+<footer class="border-t border-black/5 bg-white">
+	<div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+		<div class="grid gap-10 lg:grid-cols-12">
+			<div class="lg:col-span-4">
+				<div class="flex items-center gap-3">
+					<div
+						class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#10324a] text-white"
+					>
+						<MessageSquareHeart size={20} />
+					</div>
+					<div>
+						<div class="font-semibold">Clarinth AI</div>
+						<div class="text-sm text-slate-500">© 2026</div>
+					</div>
 				</div>
+				<p class="mt-4 max-w-md text-sm leading-7 text-slate-600">
+					Clarinth AI is your intelligent companion for meaningful conversations, emotional clarity,
+					and continuous self-growth—available anytime you need it.
+				</p>
+			</div>
 
-				<img src="/images/bird.png" alt="Clarinth Bird Icon" class="w-12" />
+			<div class="lg:col-span-8">
+				<div class="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+					{#each navGroups as group (group.items)}
+						<div>
+							<h3 class="text-sm font-semibold text-slate-900">{group.title}</h3>
+							<ul class="mt-4 space-y-3">
+								{#each group.items as item (item.label)}
+									<li>
+										<a
+											href={item.href}
+											class="text-sm text-slate-600 transition hover:text-[#10324a]"
+											>{item.label}</a
+										>
+									</li>
+								{/each}
+							</ul>
+						</div>
+					{/each}
+				</div>
+			</div>
+		</div>
+
+		<div
+			class="mt-10 flex flex-col gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between"
+		>
+			<div class="flex flex-wrap gap-x-4 gap-y-2">
+				<a href="#" class="transition hover:text-[#10324a]">Privacy Policy</a>
+				<a href="#" class="transition hover:text-[#10324a]">Terms &amp; Conditions</a>
+				<a href="#" class="transition hover:text-[#10324a]">Sitemap</a>
+				<a href="#" class="transition hover:text-[#10324a]">Trust & Safety</a>
+			</div>
+			<div class="max-w-2xl text-sm leading-7 text-slate-500">
+				Clarinth AI is not a substitute for professional medical or psychological advice. If you are
+				experiencing a crisis or emergency, please contact local emergency services or a qualified
+				professional immediately.
 			</div>
 		</div>
 	</div>
-
-	<!-- Footer bottom links -->
-	<div class="mx-auto mt-10 max-w-7xl px-6">
-		<div class="flex flex-wrap justify-center gap-4 text-sm">
-			<a href="https://clarinth.ai/">Home</a>
-			<span>|</span>
-			<a href="https://clarinth.ai/">Features</a>
-			<span>|</span>
-			<a href="https://clarinth.ai/">About</a>
-			<span>|</span>
-			<a href="https://clarinth.ai/">Contact</a>
-			<span>|</span>
-			<a href="#">Privacy Policy</a>
-			<span>|</span>
-			<a href="#">Terms of Service</a>
-		</div>
-	</div>
 </footer>
-
-<div class="mb-4 flex w-full flex-col justify-between px-5 md:flex-row">
-	<div>&copy; {new Date().getFullYear()} | All Rights Reserved.</div>
-	<div>Made in India</div>
-</div>

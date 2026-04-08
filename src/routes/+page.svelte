@@ -143,7 +143,7 @@
 			>
 				<div class="flex w-auto min-w-0 flex-col lg:flex-[1.08] lg:pt-10">
 					<div
-						class="mb-5 inline-flex w-auto md:w-min items-center gap-2 rounded-full border border-[#10324a]/10 bg-white px-4 py-2 text-sm text-slate-700 shadow-sm"
+						class="mb-5 inline-flex w-auto items-center gap-2 rounded-full border border-[#10324a]/10 bg-white px-4 py-2 text-sm text-slate-700 shadow-sm md:w-min"
 					>
 						<Sparkles size={16} class="shrink-0 text-[#10324a]" />
 						<span class="min-w-0 truncate"
@@ -238,7 +238,7 @@
 						<div
 							class="relative overflow-hidden rounded-[2rem] bg-[#f0ede6] shadow-[0_20px_70px_rgba(16,50,74,0.12)] ring-1 ring-black/5"
 						>
-							<div class="flex flex-col gap-6 p-4 sm:p-6 xl:flex-row lg:gap-0 lg:p-8">
+							<div class="flex flex-col gap-6 p-4 sm:p-6 lg:gap-0 lg:p-8 xl:flex-row">
 								<div
 									class="overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-[#dce8e2] via-[#efe9de] to-[#d9e1ea] lg:flex-[1.18]"
 								>
@@ -261,7 +261,7 @@
 											</p>
 										</div>
 
-										<div class="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col! 3xl:flex-row!">
+										<div class="3xl:flex-row! mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col!">
 											<div class="flex-1 rounded-3xl bg-white/80 p-4 backdrop-blur">
 												<div class="flex items-center gap-3">
 													<div

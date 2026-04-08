@@ -20,7 +20,7 @@
 		serviceModel: 'hybrid' | 'online' | 'offline';
 		targetSegment: 'b2c' | 'b2b' | 'both';
 		city: string;
-        years: number;
+		years: number;
 
 		initialUsers: number;
 		userGrowth: number;
@@ -81,7 +81,7 @@
 		serviceModel: 'hybrid',
 		targetSegment: 'b2c',
 		city: 'bangalore',
-        years: 5,
+		years: 5,
 
 		initialUsers: 1000,
 		userGrowth: 0.15,
@@ -143,16 +143,18 @@
 			currentUsers = currentUsers * Math.pow(1 + annualGrowth, 12) * churnMultiplier;
 
 			/* ===== COST PER USER ===== */
-            
-            const techCosts = (inputs.technical.smtp +
+
+			const techCosts =
+				(inputs.technical.smtp +
 					inputs.technical.sms +
 					inputs.technical.third_party_api +
-					inputs.technical.cloud_server) * 12;
+					inputs.technical.cloud_server) *
+				12;
 
 			const fixedAnnualCosts =
-				(inputs.rent +
-					inputs.marketingBudget) *
-				12 + techCosts + (inputs.technical.payment_gateway * techCosts);
+				(inputs.rent + inputs.marketingBudget) * 12 +
+				techCosts +
+				inputs.technical.payment_gateway * techCosts;
 
 			const infraCostPerUser = fixedAnnualCosts / Math.max(avgUsers, 1);
 
@@ -300,7 +302,7 @@
 			</div>
 			<div class="input-group">
 				<label>Projection Years</label>
-				<input type="number" bind:value={inputs.years}>
+				<input type="number" bind:value={inputs.years} />
 			</div>
 		</div>
 	</div>

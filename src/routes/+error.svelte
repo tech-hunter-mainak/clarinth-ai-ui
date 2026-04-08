@@ -19,27 +19,26 @@
 	<title>{status} • Clarinth AI</title>
 </svelte:head>
 
-<div class="min-h-screen bg-white flex items-center justify-center px-4">
+<div class="flex min-h-screen items-center justify-center bg-white px-4">
 	<div class="w-full max-w-2xl text-center">
-
 		<!-- Error Code -->
-		<div class="text-6xl font-bold tracking-tight text-[#10324a] mb-4">
+		<div class="mb-4 text-6xl font-bold tracking-tight text-[#10324a]">
 			{status}
 		</div>
 
 		<!-- Heading -->
-		<h1 class="text-2xl sm:text-3xl font-semibold text-slate-900 mb-3">
+		<h1 class="mb-3 text-2xl font-semibold text-slate-900 sm:text-3xl">
 			Something interrupted your flow
 		</h1>
 
 		<!-- Description -->
-		<p class="text-slate-600 leading-7 max-w-md mx-auto mb-8">
+		<p class="mx-auto mb-8 max-w-md leading-7 text-slate-600">
 			{error?.message ??
-			"We couldn’t find what you were looking for. Let’s help you get back to clarity."}
+				'We couldn’t find what you were looking for. Let’s help you get back to clarity.'}
 		</p>
 
 		<!-- Actions -->
-		<div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
+		<div class="mb-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
 			<button
 				on:click={goHome}
 				class="inline-flex items-center justify-center gap-2 rounded-full bg-[#10324a] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#0b2535]"
@@ -59,9 +58,7 @@
 
 		<!-- Divider -->
 		<div class="border-t border-slate-200 pt-8">
-			<p class="text-sm text-slate-500 mb-4">
-				Or continue your journey
-			</p>
+			<p class="mb-4 text-sm text-slate-500">Or continue your journey</p>
 
 			<!-- Quick Links -->
 			<div class="flex flex-wrap justify-center gap-3">

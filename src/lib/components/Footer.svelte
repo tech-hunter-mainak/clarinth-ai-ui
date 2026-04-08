@@ -78,8 +78,7 @@
 									<li>
 										<a
 											href={item.href}
-											class="text-sm text-slate-600 transition hover:text-[#10324a]"
-											>{item.label}</a
+											class="text-sm text-slate-600 transition hover:text-[#10324a]">{item.label}</a
 										>
 									</li>
 								{/each}
